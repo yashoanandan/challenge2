@@ -10,55 +10,59 @@
                 font-family: 'plus jakarta sans',sans-serif;
             }
             .mortage{
-                margin: 100px;
-                margin-left: 400px;
+                display:flex;
+                justify-content:center;
+                align-items:stretch;
+                gap:0;
+                margin-top:80px;
             }
             .calculator{
-                background-color: hsl(0, 0%, 100%);
-                
-                
-                position: absolute;
-                width: 600px;
-                border-radius: 10px;
+                background-color: hsl(0, 0%, 100%);          
+                border-radius:20px 0 0 20px;
                 gap: 0;
-                padding: 13px;
-                min-height: 200px;
+                width: 500px;
+                padding: 30px;
                 margin-left: 0px;
+                
             }
             .calculator h4,
             .calculator p{
                 margin-bottom: 10px;
             }
             .result{
-                background-color: hsl(202, 55%, 16%);
-                
-                position: absolute;
-                width: 325px;
-                border-radius: 20px;
+                background-color: hsl(202, 55%, 16%);                
+                width: 450px;
+                border-radius:0 20px 20px 60px;
                 gap: 0;
-                margin-left: 350px;
-                padding: 15px;
-                min-height: 400px;
+                margin-left:-50px;
+                padding: 40px;
                 border-bottom-left-radius: 60px;
+                
             }
-            .mortage{
-                display:flex;
-                justify-content:center;
-                align-items:flex-start;
+            .result h3{
+                margin-top:0;
+            }
+            .result p{
+                margin-bottom:25px;
             }
             .mrepay{
                 background-color: hsl(200, 100%, 12%) ;
                 border-top: 5px solid hsl(61,70%,52%);
-                width: 275px;
-                min-height: 100px;
-                padding: 5px;
-                border-radius: 30px;
+                 width:100%;
+                min-height:320px;
+                box-sizing:border-box;
+                box-sizing:border-box;
+                padding: 10px;
+                border-top-right-radius: 10px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 10px;
                 align-items: center;
+                justify-content: center;
             }
             .calrep{
                 background: hsl(61,70%,52%);
                 border-radius: 30px;
-                width: 200px;
+                width: 260px;
                 height: 50px;
                 font-size: 13px;
                 font-weight: 500;
@@ -67,23 +71,28 @@
             .calrep:hover{
                 opacity: 0.85;
             }
+            .calrep:active{
+                background-color: hsl(61,70%,52%);
+            }
             .row{
                 display: flex;
                 gap: 40px;
                 padding: 10px;
-                margin-bottom: 25px;
+                margin-bottom: 15px;
             }
             .mterm{
-                width: 180px;
+                width: 150px;
                 border-radius: 4px;
                 border: 1px solid hsl(203,41%,72%);
-                height: 30px;
+                height: 45px;
+                padding: 10px;
             }
             .irate{
-                width: 180px;
+                width: 150px;
                 border-radius: 4px;
                 border: 1px solid hsl(203,41%,72%);
-                height: 30px;
+                height: 45px;
+                padding: 10px;
             }
             .amount{
                 width: 100%;
@@ -91,10 +100,10 @@
             }
             .option{
                 border:1px solid hsl(203, 41%, 72%);
-                padding:5px;
-                border-radius:10px;
+                padding:7px;
+                border-radius:6px;
                 margin-bottom:10px;
-                width: 250px;
+                width: 80%;
                 cursor: pointer;
                 transition: 0.2s;
             }
@@ -111,10 +120,11 @@
                 cursor:pointer;
             }
             .result-box{
-                background: #022b3a;
                 color: hsl(61, 70%, 52%);
                 padding: 10px;
-                border-radius: 20px;
+                background:#022b3a;
+                padding:25px;
+                border-radius:10px;
                 align-items: center;
             }
             .option input:checked{
@@ -122,19 +132,62 @@
             }
             h3{
                 font-size: 16px;
-                font-weight: 400px;
+                font-weight: 700;
             }
            .header{
                 display:flex;
                 justify-content:space-between;
                 align-items:center;
-                margin-right: 320px;
-            }
+                width:100%;
+                margin-bottom:30px;
+}
             #clearAll{
                 color:hsl(200, 24%, 40%);
                 text-decoration:underline;
                 cursor:pointer;
                 font-size:14px;
+            }
+            .amount-box{
+                display:flex;
+                width:80%;
+                max-width:520px;
+            }
+            .amount-box span{
+                background:hsl(202,86%,94%);
+                padding:12px 16px;
+                border:1px solid hsl(203,41%,72%);
+                border-right:none;
+                font-weight:bold;
+            }
+            .amount-box input{
+                flex:1;
+                border:1px solid hsl(203,41%,72%);
+                padding:12px;
+                outline:none;
+            }
+            
+            #monthly{
+                font-size:48px;
+                color:hsl(61,70%,52%);
+            }
+            .input-with-suffix{
+                display:flex;
+                margin-top:8px;
+            }
+            .input-with-suffix input{
+                width:100px;
+                height:20px;
+                border:1px solid hsl(203,41%,72%);
+                border-right:none;
+                padding:10px;
+            }
+
+            .input-with-suffix span{
+                background:hsl(202,86%,94%);
+                border:1px solid hsl(203,41%,72%);
+                padding:10px 15px;
+                display:flex;
+                align-items:center;
             }
         </style>
     </head>
@@ -142,25 +195,31 @@
         <section class="mortage">
             <div class="calculator">
                 <div class="header">
-                <h3 style="color: hsl(202, 55%, 16%);">Mortage Calculator</h3>
-                <a href="#" id="clearall" onclick="clearAll()">clearall</a>
+                    <h3 style="color: hsl(202, 55%, 16%); font-size: 20px;">Mortgage Calculator</h3>
+                    <a href="#" id="clearAll" onclick="clearAll(); return false;" style="color: gray; font-size: 13px; margin-right: 100px;">Clear All</a>
                 </div>
-                <div class="input-group">
-                    <h4 style="color: darkgray; font-weight: bold;">Mortage Amount</h4>
-                    <span style="background: lightblue; padding: 7px;">£</span>
-                    <input type="text" id="amount" name="amount" class="amount" style="width: 200px;">
+                <h4 style="color: gray; font-weight: bold; font-size: 14px;">Mortgage Amount</h4>
+                <div class="amount-box">
+                    <span style="color: gray; font-weight: bold;">£</span>
+                    <input type="text" id="amount">
                 </div>
                 <div class="row">
                     <div>
-                        <label>Mortage Term</label><br>
-                        <input style="width: 100px;background: lightblue; padding: 1px;" class="mterm" id="term" placeholder="years">
+                        <label style="color:gray; font-weight: bold; font-size: 14px;">Mortgage Term</label>
+                        <div class="input-with-suffix">
+                            <input type="text" id="term" style="border: 1px solid lightblue;">
+                            <span style="width: 80%; border: 1px solid lightblue; color: gray;">years</span>
+                        </div>
                     </div>
-                    <div>
-                        <label>Interest Rate</label><br>
-                        <input style="width: 100px;background: lightblue;padding: 1px;" class="irate" id="rate" placeholder="%">
+                <div>
+                    <label style="color:gray; font-weight: bold; font-size: 14px;">Interest Rate</label>
+                    <div class="input-with-suffix">
+                        <input type="text" id="rate" style="border: 1px solid lightblue;">
+                        <span style="width: 100%; border: 1px solid lightblue;">%</span>
                     </div>
                 </div>
-                <p style="color: darkgray; font-weight: bold;">Mortage type</p>
+            </div>
+                <p style="color: gray; font-weight: bold;">Mortgage type</p>
                 <div class="option">
                     <input type="radio" id="repayment" name="mortgage-type">
                     <label for="repayment">Repayment</label>
@@ -170,27 +229,27 @@
                     <label for="interest">Interest Only</label>
                 </div>
                 <br>
-                <button class="calrep" onclick="calculateMortage()">
-                    <i class="fa-solid fa-calculator"></i>
+                <button class="calrep" onclick="calculateMortgage()" style="font-weight: bold;">
+                    <i class="fa-solid fa-calculator"></i>&nbsp;
                     Calculate Repayments
                 </button>
             </div>
             <div class="result">
-                <h3 style="color: hsl(61, 70%, 52%);">Your results</h3>
-                <p style="color: white;">Your results are shown below based on the information you provided. To adjust the results ,edit the form and click "calculate repayments again"</p>
+                <h3 style="color: white;">Your results</h3>
+                <p style="color: darkgray;">Your results are shown below based on the information you provided. To adjust the results ,edit the form and click "calculate repayments again"</p>
                 <div class="mrepay">
-                    <P style="color: aliceblue;">your monthly repayments</P>
+                    <P style="color: darkgray; font-size: 14px;">Your monthly repayments</P>
                     <div class="result-box">
                         <h1 id="monthly">£0.00</h1>
                         <hr>
-                        <p>Total you'll repay over the term</p>
-                        <h2 id="total">£0.00</h2>
+                        <p style="color: darkgray; font-size: 14px;">Total you'll repay over the term</p>
+                        <h2 id="total" style="color: white; font-size: 18px;">£0.00</h2>
                     </div>
                 </div>
             </div>
         </section>
     <script>
-        function calculateMortage(){
+        function calculateMortgage(){
             const p = Number(document.getElementById("amount").value);
             const annualRate = Number(document.getElementById("rate").value);
             const years = Number(document.getElementById("term").value);
